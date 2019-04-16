@@ -10,7 +10,6 @@ public class UnitTests
     {
 
     }
-
     // A UnityTest behaves like a coroutine in PlayMode
     // and allows you to yield null to skip a frame in EditMode
     // leaving in above comments while I still learn testing through Unity, will be removed in the future 
@@ -19,6 +18,7 @@ public class UnitTests
     {
         yield return null;
     }
+
     [Test]
     public void InitialTest()
     {

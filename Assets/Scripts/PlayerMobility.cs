@@ -5,19 +5,19 @@ using UnityEngine;
 public class PlayerMobility : MonoBehaviour
 {
     public float speed;
+    private Rigidbody2D rb;
 
-    private void FixedUpdate()
+    void Start()
     {
-        var mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        rb = GetComponent<Rigidbody2D>();
+    }
 
-        Quaternion rot = Quaternion.LookRotation(transform.position - mousePosition, Vector3.forward);
+    void FixedUpdate()
+    {
+        float moveHorizontal = Input.GetAxis("Horizontal");
+        float moveVertical = Input.GetAxis("Vertical");
 
-        transform.rotation = rot;
-        transform.eulerAngles = new Vector3(0, 0, transform.eulerAngles.z);
-        GetComponent<Rigidbody2D>().angularVelocity = 0;
-
-        float input = Input.GetAxis("Vertical");
-        GetComponent<Rigidbody2D>().AddForce(gameObject.transform.up * speed * input);
-        
-    }// 19:42
+        Vector3 movement = new Vector3(moveHorizontal, moveVertical, transform.eulerAngles.z);
+        rb.AddForce(movement * speed);
+    }
 }
