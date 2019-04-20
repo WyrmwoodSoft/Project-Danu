@@ -12,7 +12,9 @@ notifications:
     on_failure: change
 
 script: |
-  echo "hello world"    
+  echo "hello world" 
+  echo "Downloading Unity 5.5.1 pkg:"
+  curl --retry 5 -o Unity.pkg http://netstorage.unity3d.com/unity/88d00a7498cd/MacEditorInstaller/Unity-2018.2.7f1.pkg   
 
 # script: |
 #   echo "Downloading Unity 5.5.1 pkg:"
