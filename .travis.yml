@@ -16,10 +16,10 @@ script: |
   curl --retry 5 -o Unity.pkg http://netstorage.unity3d.com/unity/88d00a7498cd/MacEditorInstaller/Unity-2018.2.7f1.pkg   
   echo "Downloading Unity 5.5.1 Windows Build Support pkg:"
   curl --retry 5 -o Unity_win.pkg http://netstorage.unity3d.com/unity/88d00a7498cd/MacEditorTargetInstaller/UnitySetup-Windows-Support-for-Editor-2018.2.7f1.pkg
-  echo "Installing Unity.pkg"
-  sudo installer -dumplog -package Unity.pkg -target /
-  echo 'Installing Unity_win.pkg'
-  sudo installer -dumplog -package Unity_win.pkg -target / 
+  # echo "Installing Unity.pkg"
+  # sudo installer -dumplog -package Unity.pkg -target /
+  # echo 'Installing Unity_win.pkg'
+  # sudo installer -dumplog -package Unity_win.pkg -target / 
   echo "Running editor unit tests"
   /Applications/Unity/Unity.app/Contents/MacOS/Unity \
   -batchmode \
